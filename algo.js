@@ -82,4 +82,14 @@ window.onload = function () {
         .catch(function (error) {
         console.error("Error:", error);
     });
+    getBusRoutes(destination, origin)
+        .then(function (routes) {
+        console.log("Bus routes:", routes);
+        routes.forEach(function (route) {
+            console.log('halfway point:', find_halfway_point(route));
+        });
+    })
+        .catch(function (error) {
+        console.error("Error:", error);
+    });
 };

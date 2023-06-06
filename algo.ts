@@ -95,5 +95,14 @@ window.onload = () => {
         .catch((error) => {
             console.error("Error:", error);
         });
-
+    getBusRoutes(destination, origin)
+        .then((routes) => {
+            console.log("Bus routes:", routes);
+            routes.forEach((route) => {
+                console.log('halfway point:', find_halfway_point(route));
+            });
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
 }
